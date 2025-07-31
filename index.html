@@ -28,8 +28,9 @@
     })();
   </script>
 
-  <meta name="description" content="Memuat deskripsi..." id="meta-description" />  
-  <meta name="author" content="blog" id="meta-author" />  
+  <meta name="description" content="${subdomain} - Anything About Me" id="meta-description" />  
+  <meta name="author" content="${subdomain}" id="meta-author" />  
+  
   <script>  
     (function() {  
       const canonical = document.createElement('link');  
@@ -250,7 +251,7 @@
       if (!imgMatch) return;
 
       const imageUrl = imgMatch[1].replace(/\/s\d{2,4}(-c)?\//, "/s1600/");
-      const altText = `photo ${entries.length + 1}`.toLowerCase();
+      const altText = `${subdomain} ${entries.length + 1}`.toLowerCase();
 
       entries.push(imageUrl);
 
@@ -555,81 +556,86 @@
   </script>  
 </footer>  
 
-<script>  
-  const hostname = window.location.hostname;  
-  const parts = hostname.split(".");  
-  const subdomain = parts.length > 2 ? parts[0] : "blog";  
-  const titleTarget = subdomain;  
-  const descTarget = `${subdomain} - Photo and Video Gallery.`;  
-  const authorTarget = subdomain;  
-  const imgAltTarget = `${subdomain} - `;  
-  const headingPrefix = `${subdomain}: `;  
+<script>
+    // Ambil subdomain
+    const hostname = window.location.hostname;
+    const parts = hostname.split(".");
+    const subdomain = parts.length > 2 ? parts[0] : "blog";
+    const titleTarget = subdomain;
+    const descTarget = `${subdomain}`;
+    const authorTarget = subdomain;
+    const imgAltTarget = `${subdomain} - `;
+    const headingPrefix = `${subdomain}: `;
 
-  document.title = titleTarget;  
-  window.addEventListener("DOMContentLoaded", () => {  
-    const metaDesc = document.querySelector('meta[name="description"]');  
-    if (metaDesc) metaDesc.setAttribute("content", descTarget);  
+    // Set awal title dan meta
+    document.title = titleTarget;
+    window.addEventListener("DOMContentLoaded", () => {
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute("content", descTarget);
 
-    const metaAuthor = document.querySelector('meta[name="author"]');  
-    if (metaAuthor) metaAuthor.setAttribute("content", authorTarget);  
+      const metaAuthor = document.querySelector('meta[name="author"]');
+      if (metaAuthor) metaAuthor.setAttribute("content", authorTarget);
 
-    document.querySelectorAll("h5,h6").forEach(h => {  
-      if (!h.textContent.startsWith(headingPrefix)) {  
-        h.textContent = headingPrefix + h.textContent;  
-      }  
-    });  
+      // Set heading dinamis
+      document.querySelectorAll("h2,h3,h4,h5,h6").forEach(h => {
+        if (!h.textContent.startsWith(headingPrefix)) {
+          h.textContent = headingPrefix + h.textContent;
+        }
+      });
 
-    document.querySelectorAll("img").forEach(img => {  
-      const alt = img.getAttribute("alt");  
-      if (!alt || alt.trim() === "") {  
-        img.setAttribute("alt", imgAltTarget);  
-      } else if (!alt.startsWith(subdomain)) {  
-        img.setAttribute("alt", `${subdomain}: ${alt}`);  
-      }  
-    });  
-  });  
+      // Set alt gambar
+      document.querySelectorAll("img").forEach(img => {
+        const alt = img.getAttribute("alt");
+        if (!alt || alt.trim() === "") {
+          img.setAttribute("alt", imgAltTarget);
+        } else if (!alt.startsWith(subdomain)) {
+          img.setAttribute("alt", `${subdomain}: ${alt}`);
+        }
+      });
+    });
 
-  const titleObserver = new MutationObserver(mutations => {  
-    mutations.forEach(m => {  
-      if (document.title !== titleTarget) {  
-        document.title = titleTarget;  
-      }  
-    });  
-  });  
-  titleObserver.observe(document.querySelector("title"), { childList: true });  
+    // Mutation Observer untuk title
+    const titleObserver = new MutationObserver(mutations => {
+      mutations.forEach(m => {
+        if (document.title !== titleTarget) {
+          document.title = titleTarget;
+        }
+      });
+    });
+    titleObserver.observe(document.querySelector("title"), { childList: true });
 
-  const metaObserver = new MutationObserver(() => {  
-    const desc = document.querySelector('meta[name="description"]');  
-    if (desc && desc.getAttribute("content") !== descTarget) {  
-      desc.setAttribute("content", descTarget);  
-    }  
+    // Mutation Observer untuk meta
+    const metaObserver = new MutationObserver(() => {
+      const desc = document.querySelector('meta[name="description"]');
+      if (desc && desc.getAttribute("content") !== descTarget) {
+        desc.setAttribute("content", descTarget);
+      }
 
-    const author = document.querySelector('meta[name="author"]');  
-    if (author && author.getAttribute("content") !== authorTarget) {  
-      author.setAttribute("content", authorTarget);  
-    }  
-  });  
-  metaObserver.observe(document.head, { childList: true, subtree: true });  
+      const author = document.querySelector('meta[name="author"]');
+      if (author && author.getAttribute("content") !== authorTarget) {
+        author.setAttribute("content", authorTarget);
+      }
+    });
+    metaObserver.observe(document.head, { childList: true, subtree: true });
 
-  const bodyObserver = new MutationObserver(() => {  
-    document.querySelectorAll("h5,h6").forEach(h => {  
-      if (!h.textContent.startsWith(headingPrefix)) {  
-        h.textContent = headingPrefix + h.textContent;  
-      }  
-    });  
-    document.querySelectorAll("img").forEach(img => {  
-      const alt = img.getAttribute("alt");  
-      if (!alt || alt.trim() === "") {  
-        img.setAttribute("alt", imgAltTarget);  
-      } else if (!alt.startsWith(subdomain)) {  
-        img.setAttribute("alt", `${subdomain}: ${alt}`);  
-      }  
-    });  
-  });  
-  bodyObserver.observe(document.body, { childList: true, subtree: true });  
-</script>  
-
-
+    // Mutation Observer untuk heading & img
+    const bodyObserver = new MutationObserver(() => {
+      document.querySelectorAll("h2,h3,h4,h5,h6").forEach(h => {
+        if (!h.textContent.startsWith(headingPrefix)) {
+          h.textContent = headingPrefix + h.textContent;
+        }
+      });
+      document.querySelectorAll("img").forEach(img => {
+        const alt = img.getAttribute("alt");
+        if (!alt || alt.trim() === "") {
+          img.setAttribute("alt", imgAltTarget);
+        } else if (!alt.startsWith(subdomain)) {
+          img.setAttribute("alt", `${subdomain}: ${alt}`);
+        }
+      });
+    });
+    bodyObserver.observe(document.body, { childList: true, subtree: true });
+  </script>
 
 </body>  
 </html>
