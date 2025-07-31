@@ -4,11 +4,32 @@
   <meta charset="UTF-8" />  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
 
-  <title>GitHub Pages and Jekyll Tutorials</title>
 
-  <meta name="description" content="Discover why GitHub Pages and Jekyll are a powerful combination for building fast, secure, and easily maintainable static websites." id="meta-description" />  
-  <meta name="author" content="Admin" id="meta-author" />  
+  <script>
+    (function () {
+      const hostname = location.hostname;
+      const pathname = location.pathname;
+      const subdomain = hostname.split('.')[0];
+      const pathNameClean = pathname.replace(/^\/+|\/+$/g, '');
 
+      let titleText = '';
+      if (!pathNameClean || pathNameClean.toLowerCase() === 'index.html') {
+        titleText = subdomain;
+      } else {
+        const fileName = pathNameClean.split('/').pop();
+        titleText = fileName.replace(/\.html$/i, '');
+      }
+
+      const titleTag = document.querySelector('title') || document.createElement('title');
+      titleTag.textContent = titleText;
+      if (!titleTag.parentNode) {
+        document.head.appendChild(titleTag);
+      }
+    })();
+  </script>
+
+  <meta name="description" content="Memuat deskripsi..." id="meta-description" />  
+  <meta name="author" content="blog" id="meta-author" />  
   <script>  
     (function() {  
       const canonical = document.createElement('link');  
@@ -64,10 +85,197 @@
   </script>  
 </head>  
 <body>  
+	<div class="spo">
+ <!-- ads by wi3kas5alimexy.blogspot.com -->
+<script type="text/javascript">
+	atOptions = {
+		'key' : '3f672ec602df797642e9dbdfb337569e',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/3f672ec602df797642e9dbdfb337569e/invoke.js"></script>
+<script type="text/javascript">
+	atOptions = {
+		'key' : '40f1c610090584610030c74709f82896',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/40f1c610090584610030c74709f82896/invoke.js"></script>
+<script type="text/javascript">
+	atOptions = {
+		'key' : '0cbdb3ac944efc14e7e0fe852e3ad3a5',
+		'format' : 'iframe',
+		'height' : 600,
+		'width' : 160,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/0cbdb3ac944efc14e7e0fe852e3ad3a5/invoke.js"></script>
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'a543729c95de3341d9f240b9b941edfe',
+		'format' : 'iframe',
+		'height' : 300,
+		'width' : 160,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/a543729c95de3341d9f240b9b941edfe/invoke.js"></script>
+<script type="text/javascript">
+	atOptions = {
+		'key' : '0acda123c359e1953d2186b0a74f0364',
+		'format' : 'iframe',
+		'height' : 60,
+		'width' : 468,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/0acda123c359e1953d2186b0a74f0364/invoke.js"></script>
+<script type='text/javascript' src='//pl27258148.profitableratecpm.com/fe/ec/ea/feeceae70fe7b8956ffc6e2e4f53991a.js'></script>
+<script type='text/javascript' src='//pl16804628.profitableratecpm.com/e7/19/45/e71945928ae8f99b0bee4c0d1219be5a.js'></script>
+<script type="text/javascript">
+	atOptions = {
+		'key' : '1c081498ef1d1996c45172aa313d1bdb',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/1c081498ef1d1996c45172aa313d1bdb/invoke.js"></script>
 
+</div>
 
 <main>    
 
+
+
+<!-- GALERI MELAYANG FULLSCREEN -->
+<div id="ingganinggraPopupOverlay" class="ingganinggraPopupOverlay">
+  <button class="ingganinggraPopupClose" onclick="closeIngganinggraPopup()" aria-label="Close gallery">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </button>
+  <div id="ingganinggraFooterGallery" class="ingganinggraGalleryGrid"></div>
+</div>
+
+<style>
+.ingganinggraPopupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  overflow-y: auto;
+  display: none;
+  z-index: 9999;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.ingganinggraPopupClose {
+  position: fixed;
+  top: 12px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.ingganinggraPopupClose svg:hover {
+  stroke: #ccc;
+}
+
+.ingganinggraGalleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 6px;
+  margin-top: 50px;
+}
+
+.ingganinggraGalleryGrid figure {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ingganinggraGalleryGrid img {
+  max-width: 100%;
+  max-height: 100vh;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 4px;
+}
+</style>
+
+<script>
+(function(){
+  const blogId = "3878198361264397837";
+  const maxResults = 480;
+  let entries = [];
+
+  const overlay = document.getElementById("ingganinggraPopupOverlay");
+  const container = document.getElementById("ingganinggraFooterGallery");
+
+  function fetchPosts() {
+    const url = `https://www.blogger.com/feeds/${blogId}/posts/default?alt=json-in-script&max-results=${maxResults}&callback=showIngganinggraPosts`;
+    const s = document.createElement("script");
+    s.src = url;
+    document.body.appendChild(s);
+  }
+
+  window.showIngganinggraPosts = function(data) {
+    if (!data.feed.entry) return;
+
+    const shuffled = data.feed.entry.sort(() => 0.5 - Math.random()).slice(0, 9);
+
+    shuffled.forEach(entry => {
+      const content = entry.content?.$t || "";
+      const imgMatch = content.match(/<img[^>]+src="([^"]+)"/);
+      if (!imgMatch) return;
+
+      const imageUrl = imgMatch[1].replace(/\/s\d{2,4}(-c)?\//, "/s1600/");
+      const altText = `photo ${entries.length + 1}`.toLowerCase();
+
+      entries.push(imageUrl);
+
+      const fig = document.createElement('figure');
+      fig.innerHTML = `
+        <img src="${imageUrl}" alt="${altText}" loading="lazy" />
+      `;
+      container.appendChild(fig);
+
+      const prefetch = document.createElement('link');
+      prefetch.rel = 'prefetch';
+      prefetch.href = imageUrl;
+      document.head.appendChild(prefetch);
+    });
+
+    overlay.style.display = "block";
+  };
+
+  window.closeIngganinggraPopup = function() {
+    overlay.style.display = "none";
+  }
+
+  fetchPosts();
+})();
+</script>
 
 
 <style>
@@ -175,7 +383,7 @@
 
 
 
-<div style="height:1px;width:100%;overflow:auto;">
+<div class="spo">
   <section id="indrixFooterGallery"></section>  
   <div class="pagination">  
     <button onclick="loadPreviousPage()" id="prevBtn" style="display: none;">Previous</button>  
@@ -186,10 +394,10 @@
 
 <script>
 (function(){
-  const blogId = "3849070220815751744";
+  const blogId = "3744972648234868485";
   const label = "";
-  let startIndex = 1870;
-  const maxResults = 10;
+  let startIndex = 100;
+  const maxResults = 47;
   const container = document.getElementById("indrixFooterGallery");
   const prevBtn = document.getElementById("prevBtn");
   const fallbackImage = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9ZGc1m9JOOEC2Gszz7Dr1qLXswQeaIHiIbYb8r6oBPZLL-9TvoEgiF7bt-vIRi_hwV1f3BZlkR3-27vNutWCLzRXXdZhPGtgohBB5DkFppKlaf6gzsmK_8f9O3lW40xqcyTybJIfq_GWycI4xP0JfBURCRoBih-POfeWt7c9gHareCwIhB1O1a6z0Cdw/s1600/images%20%281%29.jpeg";
@@ -327,72 +535,7 @@
     iconClose.style.display = isVisible ? 'none' : 'inline';
   });
 </script> <footer style="text-align: center; padding: 30px 20px; font-size: 14px; color: #666;">  
-	<center style="height:1px;width:100%;overflow:auto;">
- <!-- ads by wi3kas5alimexy.blogspot.com -->
-<script type="text/javascript">
-	atOptions = {
-		'key' : '3f672ec602df797642e9dbdfb337569e',
-		'format' : 'iframe',
-		'height' : 250,
-		'width' : 300,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/3f672ec602df797642e9dbdfb337569e/invoke.js"></script>
-<script type="text/javascript">
-	atOptions = {
-		'key' : '40f1c610090584610030c74709f82896',
-		'format' : 'iframe',
-		'height' : 90,
-		'width' : 728,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/40f1c610090584610030c74709f82896/invoke.js"></script>
-<script type="text/javascript">
-	atOptions = {
-		'key' : '0cbdb3ac944efc14e7e0fe852e3ad3a5',
-		'format' : 'iframe',
-		'height' : 600,
-		'width' : 160,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/0cbdb3ac944efc14e7e0fe852e3ad3a5/invoke.js"></script>
-<script type="text/javascript">
-	atOptions = {
-		'key' : 'a543729c95de3341d9f240b9b941edfe',
-		'format' : 'iframe',
-		'height' : 300,
-		'width' : 160,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/a543729c95de3341d9f240b9b941edfe/invoke.js"></script>
-<script type="text/javascript">
-	atOptions = {
-		'key' : '0acda123c359e1953d2186b0a74f0364',
-		'format' : 'iframe',
-		'height' : 60,
-		'width' : 468,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/0acda123c359e1953d2186b0a74f0364/invoke.js"></script>
-<script type='text/javascript' src='//pl27258148.profitableratecpm.com/fe/ec/ea/feeceae70fe7b8956ffc6e2e4f53991a.js'></script>
-<script type='text/javascript' src='//pl16804628.profitableratecpm.com/e7/19/45/e71945928ae8f99b0bee4c0d1219be5a.js'></script>
-<script type="text/javascript">
-	atOptions = {
-		'key' : '1c081498ef1d1996c45172aa313d1bdb',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/1c081498ef1d1996c45172aa313d1bdb/invoke.js"></script>
--->
-</center>
+
 
 <hr /><br />
 
@@ -412,67 +555,82 @@
   </script>  
 </footer>  
 
+<script>  
+  const hostname = window.location.hostname;  
+  const parts = hostname.split(".");  
+  const subdomain = parts.length > 2 ? parts[0] : "blog";  
+  const titleTarget = subdomain;  
+  const descTarget = `${subdomain} - Photo and Video Gallery.`;  
+  const authorTarget = subdomain;  
+  const imgAltTarget = `${subdomain} - `;  
+  const headingPrefix = `${subdomain}: `;  
 
-<!-- Prism.js dark theme -->
-<link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+  document.title = titleTarget;  
+  window.addEventListener("DOMContentLoaded", () => {  
+    const metaDesc = document.querySelector('meta[name="description"]');  
+    if (metaDesc) metaDesc.setAttribute("content", descTarget);  
 
+    const metaAuthor = document.querySelector('meta[name="author"]');  
+    if (metaAuthor) metaAuthor.setAttribute("content", authorTarget);  
 
+    document.querySelectorAll("h5,h6").forEach(h => {  
+      if (!h.textContent.startsWith(headingPrefix)) {  
+        h.textContent = headingPrefix + h.textContent;  
+      }  
+    });  
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('pre code').forEach(function (block) {
-    // Tambah class Prism jika belum ada
-    if (!block.className.match(/language-/)) {
-      block.classList.add('language-html');
-    }
+    document.querySelectorAll("img").forEach(img => {  
+      const alt = img.getAttribute("alt");  
+      if (!alt || alt.trim() === "") {  
+        img.setAttribute("alt", imgAltTarget);  
+      } else if (!alt.startsWith(subdomain)) {  
+        img.setAttribute("alt", `${subdomain}: ${alt}`);  
+      }  
+    });  
+  });  
 
-    const pre = block.parentNode;
+  const titleObserver = new MutationObserver(mutations => {  
+    mutations.forEach(m => {  
+      if (document.title !== titleTarget) {  
+        document.title = titleTarget;  
+      }  
+    });  
+  });  
+  titleObserver.observe(document.querySelector("title"), { childList: true });  
 
-    // Tambah tombol copy
-    if (!pre.querySelector('.copy-btn')) {
-      const button = document.createElement('button');
-      button.className = 'copy-btn';
-      button.textContent = 'Copy';
-      pre.appendChild(button);
+  const metaObserver = new MutationObserver(() => {  
+    const desc = document.querySelector('meta[name="description"]');  
+    if (desc && desc.getAttribute("content") !== descTarget) {  
+      desc.setAttribute("content", descTarget);  
+    }  
 
-      button.addEventListener('click', function () {
-        navigator.clipboard.writeText(block.innerText).then(function () {
-          button.textContent = 'Copied!';
-          setTimeout(() => button.textContent = 'Copy', 2000);
-        });
-      });
-    }
-  });
+    const author = document.querySelector('meta[name="author"]');  
+    if (author && author.getAttribute("content") !== authorTarget) {  
+      author.setAttribute("content", authorTarget);  
+    }  
+  });  
+  metaObserver.observe(document.head, { childList: true, subtree: true });  
 
-  if (window.Prism) Prism.highlightAll();
-});
-</script>
+  const bodyObserver = new MutationObserver(() => {  
+    document.querySelectorAll("h5,h6").forEach(h => {  
+      if (!h.textContent.startsWith(headingPrefix)) {  
+        h.textContent = headingPrefix + h.textContent;  
+      }  
+    });  
+    document.querySelectorAll("img").forEach(img => {  
+      const alt = img.getAttribute("alt");  
+      if (!alt || alt.trim() === "") {  
+        img.setAttribute("alt", imgAltTarget);  
+      } else if (!alt.startsWith(subdomain)) {  
+        img.setAttribute("alt", `${subdomain}: ${alt}`);  
+      }  
+    });  
+  });  
+  bodyObserver.observe(document.body, { childList: true, subtree: true });  
+</script>  
 
-
-
-<!-- Tombol Back to Top -->
-<div id="btt-button" onclick="scrollToTop()">
-  <svg width="20" height="20" viewbox="0 0 24 24" fill="none">
-    <path d="M12 4L6 10M12 4L18 10M12 4V20" stroke="white" stroke-width="2" stroke-linecap="round"/>
-  </path></svg>
-</div>
-
-
-<script>
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-window.addEventListener("scroll", function () {
-  const btt = document.getElementById("btt-button");
-  btt.style.display = window.scrollY > 400 ? "flex" : "none";
-});
-</script>
 
 
 </body>  
 </html>
+
