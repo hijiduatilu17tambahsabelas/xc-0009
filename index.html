@@ -9,17 +9,28 @@
   (function () {
     const hostname = location.hostname;
     const pathname = location.pathname;
-    const subdomain = hostname.split('.')[0];
+    const subdomainRaw = hostname.split('.')[0];
+
+    // Bersihkan subdomain: ubah "-" jadi spasi dan kapitalisasi setiap kata
+    const formatText = (str) => {
+      return str
+        .replace(/-/g, ' ')
+        .replace(/\b\w/g, c => c.toUpperCase());
+    };
+    const subdomain = formatText(subdomainRaw);
+    const suffix = ' - Sexy and Hot Gallery';
+
     const pathNameClean = pathname.replace(/^\/+|\/+$/g, '');
 
     // Membuat judul yang lebih ramah pengguna
     let titleText = '';
     if (!pathNameClean || pathNameClean.toLowerCase() === 'index.html') {
-      titleText = subdomain;
+      titleText = subdomain + suffix;
     } else {
       const fileName = pathNameClean.split('/').pop().replace(/\.html$/i, '');
       const decoded = decodeURIComponent(fileName.replace(/[-_]/g, ' '));
-      titleText = decoded.replace(/\b\w/g, c => c.toUpperCase());
+      const fileTitle = decoded.replace(/\b\w/g, c => c.toUpperCase());
+      titleText = fileTitle;
     }
 
     // Masukkan <title>
@@ -39,7 +50,7 @@
     metaAuthor.content = subdomain + ' team';
     if (!metaAuthor.parentNode) document.head.appendChild(metaAuthor);
   })();
-</script>  
+</script>
   
   <script>  
     (function() {  
