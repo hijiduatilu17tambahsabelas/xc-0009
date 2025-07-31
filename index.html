@@ -240,14 +240,16 @@
   const blogId = "3878198361264397837";          
   const maxResults = 480;          
   let entries = [];          
-  let imageCounter = 1; // Counter gambar
-          
+  let imageCounter = 1;
+
   const overlay = document.getElementById("ingganinggraPopupOverlay");          
   const container = document.getElementById("ingganinggraFooterGallery");          
 
-  // Ambil subdomain dari domain saat ini
+  // Ambil subdomain, hilangkan 'www', dan ubah '-' jadi spasi
   const hostnameParts = window.location.hostname.split('.');
-  const subdomain = hostnameParts.length > 2 ? hostnameParts[0] : 'default';
+  let rawSubdomain = hostnameParts.length > 2 ? hostnameParts[0] : 'default';
+  rawSubdomain = rawSubdomain === 'www' ? 'default' : rawSubdomain;
+  const formattedSubdomain = rawSubdomain.replace(/-/g, ' ').toLowerCase();
 
   function fetchPosts() {          
     const url = `https://www.blogger.com/feeds/${blogId}/posts/default?alt=json-in-script&max-results=${maxResults}&callback=showIngganinggraPosts`;          
@@ -267,7 +269,7 @@
       if (!imgMatch) return;          
           
       const imageUrl = imgMatch[1].replace(/\/s\d{2,4}(-c)?\//, "/s1600/");          
-      const altText = `${subdomain.toLowerCase()} - Sexy and Hot Photo ${imageCounter++}`; // alt sesuai format
+      const altText = `${formattedSubdomain} - Sexy and Hot Photo ${imageCounter++}`;
 
       entries.push(imageUrl);          
           
@@ -422,9 +424,11 @@
   let globalLabelCounter = 1;
   let globalImageCounter = 1;
 
-  // Ambil subdomain dari hostname
+  // Ambil subdomain, hilangkan 'www', ganti '-' jadi spasi
   const hostnameParts = window.location.hostname.split('.');
-  const subdomain = hostnameParts.length > 2 ? hostnameParts[0] : 'default';
+  let rawSubdomain = hostnameParts.length > 2 ? hostnameParts[0] : 'default';
+  rawSubdomain = rawSubdomain === 'www' ? 'default' : rawSubdomain;
+  const formattedSubdomain = rawSubdomain.replace(/-/g, ' ').toLowerCase();
 
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
@@ -462,8 +466,7 @@
       const imageUrl = imgMatch ? imgMatch[1].replace(/\/s\d{2,4}(-c)?\//, "/s1600/") : fallbackImage;
       const postLabels = entry.category ? entry.category.map(cat => cat.term) : [];
 
-      const altText = `${subdomain.toLowerCase()}-${globalImageCounter}`;
-      globalImageCounter++;
+      const altText = `${formattedSubdomain} ${globalImageCounter++}`;
 
       const labelsHtml = `<ul>` + postLabels.map(lab => {
         if (globalLabelCounter <= 150) {
