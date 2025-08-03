@@ -10,15 +10,13 @@
     const hostname = location.hostname;
     const pathname = location.pathname;
     const subdomainRaw = hostname.split('.')[0];
-
-    // Bersihkan subdomain: ubah "-" jadi spasi dan kapitalisasi setiap kata
     const formatText = (str) => {
       return str
         .replace(/-/g, ' ')
         .replace(/\b\w/g, c => c.toUpperCase());
     };
     const subdomain = formatText(subdomainRaw);
-    const suffix = ' - Sexy and Hot Gallery';
+    const suffix = ' ';
 
     const pathNameClean = pathname.replace(/^\/+|\/+$/g, '');
 
@@ -41,7 +39,7 @@
     // Buat <meta name="description"> jika belum ada
     const metaDescription = document.querySelector('meta[name="description"]') || document.createElement('meta');
     metaDescription.name = 'description';
-    metaDescription.content = 'Page about ' + titleText + ' hosted on ' + hostname;
+    metaDescription.content = 'titleText + ' - Step-by-step guides for creating and optimizing Jekyll sites on GitHub Pages — ideal for developers and content creators.';
     if (!metaDescription.parentNode) document.head.appendChild(metaDescription);
 
     // Buat <meta name="author"> jika belum ada
@@ -87,24 +85,37 @@
 
 <link rel="preload" href="https://adabunalima5.github.io/file/css/css.css" as="style">
 <link rel="stylesheet" href="https://adabunalima5.github.io/file/css/css.css">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WT93W2845E"></script>  
-  <script>  
-    window.dataLayer = window.dataLayer || [];  
-    function gtag(){ dataLayer.push(arguments); }  
-    gtag('js', new Date());  
-    gtag('config', 'G-WT93W2845E');   
-    gtag('config', 'G-XHCGVT06EJ');   
-    gtag('config', 'G-L239NSVMTN');   
-    gtag('config', 'G-XK27E9HEDZ');   
-  </script>  
-  <script>  
-    (function(w,d,s,l,i){  
-      w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});  
-      var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';  
-      j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;  
-      f.parentNode.insertBefore(j,f);  
-    })(window,document,'script','dataLayer','GTM-NWD665DQ');  
-  </script>  
+
+<!-- Google tag (gtag.js) - multiple accounts -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WT93W2845E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  // Konfigurasi semua akun Google Analytics
+  gtag('config', 'G-WT93W2845E'); // goblog google
+  gtag('config', 'G-XHCGVT06EJ'); // raisfazriansyah722@gmail.com
+  gtag('config', 'G-L239NSVMTN'); // indrianitresna42@gmail.com
+  gtag('config', 'G-XK27E9HEDZ'); // r.fazriansyah@gmail.com
+  gtag('config', 'G-LJ7MJ4Q2VW'); // raisfazriansyah01@gmail.com
+  gtag('config', 'G-W9876DR1JZ'); //asri38770@gmail.com
+  gtag('config', 'G-YFK8DZ3FHK'); //raisfazriansyah4@gmail.com
+  gtag('config', 'G-5RHX9ESPY6'); //simerah9250@gmail.com
+</script>
+
+<!-- Google Tag Manager - ninggrai@gmail.com -->
+<script>
+(function(w,d,s,l,i){
+  w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+  var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+  j.async=true;
+  j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+  f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NWD665DQ');
+</script>
+
 </head>  
 <body>  
 	<div class="spo">
